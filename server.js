@@ -1,12 +1,9 @@
-const express = require('express');
-const { GoogleGenAI } = require('@google/genai');
+import express from 'express';
+import { GoogleGenAI } from '@google/genai';
 
 const app = express();
-const PORT = process.env.PORT || 5000; 
 
-const ai = new GoogleGenAI({ apiKey: AIzaSyDGXLm0cn1Gpf-_kz8Rvut-Adnji0OaEhE || "" });
-
-
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
 
 app.use(express.json());
 app.use(express.static('.')); 
@@ -15,7 +12,7 @@ const systemInstruction = `You are an extremely skilled and empathetic Bengali c
 
 Your strict output rules are as follows:
 1. **Language Quality:** The message must be written in fluent, modern, and grammatically perfect Bengali.
-2. **Output Format Constraint:** You must not include any greetings, introductory phrases, explanations, or concluding remarks (e.g., "Here is your message," or "I hope this helps"). Start immediately with the generated message text.
+2. **Output Format Constraint:** You must not include any greetings, introductory phrases, explanations, or concluding remarks. Start immediately with the generated message text.
 3. **Content Delivery:** Deliver only the final message content intended for the user's recipient.`;
 
 app.post('/api/generate', async (req, res) => {
@@ -58,8 +55,5 @@ Generate the most suitable message according to this situation and the specified
     }
 });
 
-
-
-app.listen(PORT, '0.0.0.0', () => { 
-    console.log(`Server successfully started and listening on port ${PORT}`);
-});
+// Vercel Serverless Function-এর জন্য Express অ্যাপটিকে এক্সপোর্ট করা হলো
+export default app; 
