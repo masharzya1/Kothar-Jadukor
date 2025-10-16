@@ -2,11 +2,12 @@ const express = require('express');
 const { GoogleGenAI } = require('@google/genai');
 
 const app = express();
+const PORT = process.env.PORT || 5000; 
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
 
 app.use(express.json());
-// স্ট্যাটিক ফাইল (index.html, script.js, style.css) সার্ভ করার জন্য যোগ করা হলো
+
 app.use(express.static('.')); 
 
 const systemInstruction = `You are an extremely skilled and empathetic Bengali communication specialist and creative copywriter. Your primary goal is to analyze the Situation (Context) and the desired Tone provided by the user and generate the single, most appropriate, effective, and engaging message in Bengali.
@@ -56,5 +57,7 @@ Generate the most suitable message according to this situation and the specified
     }
 });
 
-// Vercel Serverless Function-এর জন্য Express অ্যাপটিকে এক্সপোর্ট করা হলো
-module.exports = app;
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});

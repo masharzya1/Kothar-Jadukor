@@ -1,0 +1,23 @@
+{
+  "name": "kothar-jadukor",
+  "version": "1.0.0",
+  "description": "Bengali AI Copywriting Assistant using Gemini API and Express.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "gemini",
+    "ai",
+    "bengali"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "@google/genai": "^0.15.0"
+  }
+}
