@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>কথার যাদুকর - আপনার বার্তা তৈরি করুন</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">কথার যাদুকর</h1>
+            <p class="subtitle">Made by মাহদি আবরার শার্জি</p>
+        </header>
+
+        <main class="main">
+            <div class="card">
+                <div class="form-group">
+                    <label for="situation-input" class="label">
+                        পরিস্থিতি বা উদ্দেশ্য লিখুন
+                        <span class="label-hint">আপনি কোন বিষয়ে বার্তা পাঠাতে চান?</span>
+                    </label>
+                    <textarea 
+                        id="situation-input" 
+                        class="textarea" 
+                        placeholder="উদাহরণ: আমার বন্ধুর জন্মদিনের উইশ পাঠাতে চাই..."
+                        rows="5"
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="tone-select" class="label">
+                        টোন নির্বাচন করুন
+                        <span class="label-hint">বার্তার ধরন বেছে নিন</span>
+                    </label>
+                    <select id="tone-select" class="select">
+                        <option value="আনুষ্ঠানিক ও সম্মানজনক">আনুষ্ঠানিক ও সম্মানজনক</option>
+                        <option value="বন্ধুত্বপূর্ণ ও আন্তরিক">বন্ধুত্বপূর্ণ ও আন্তরিক</option>
+                        <option value="মজার">মজার</option>
+                        <option value="রোমান্টিক ও ভালোবাসার">রোমান্টিক ও ভালোবাসার</option>
+                        <option value="পেশাদার ও ব্যবসায়িক">পেশাদার ও ব্যবসায়িক</option>
+                        <option value="সহানুভূতিশীল ও সান্ত্বনাদায়ক">সহানুভূতিশীল ও সান্ত্বনাদায়ক</option>
+                        <option value="উৎসাহব্যঞ্জক ও অনুপ্রেরণামূলক">উৎসাহব্যঞ্জক ও অনুপ্রেরণামূলক</option>
+                        <option value="কৃতজ্ঞতাপূর্ণ ও ধন্যবাদসূচক">কৃতজ্ঞতাপূর্ণ ও ধন্যবাদসূচক</option>
+                    </select>
+                </div>
+
+                <button id="generate-btn" class="button">
+                    <span class="button-text">বার্তা তৈরি করুন</span>
+                    <svg class="button-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.5 10H15.5M15.5 10L10.5 5M15.5 10L10.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="result-container" class="result-container hidden">
+                <div class="card result-card">
+                    <div class="result-header">
+                        <h2 class="result-title">আপনার বার্তা</h2>
+                        <button id="copy-btn" class="copy-button">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.3333 10.75V14.0833C13.3333 15.2339 12.4006 16.1667 11.25 16.1667H5.91667C4.76607 16.1667 3.83333 15.2339 3.83333 14.0833V8.75C3.83333 7.5994 4.76607 6.66667 5.91667 6.66667H9.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M16.1667 3.83333V10C16.1667 10.9205 15.4205 11.6667 14.5 11.6667H11.5C10.5795 11.6667 9.83333 10.9205 9.83333 10V3.83333C9.83333 2.91286 10.5795 2.16667 11.5 2.16667H14.5C15.4205 2.16667 16.1667 2.91286 16.1667 3.83333Z" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            <span>কপি করুন</span>
+                        </button>
+                    </div>
+                    <div id="generated-message" class="generated-message"></div>
+                </div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p class="loading-text">বার্তা তৈরি হচ্ছে...</p>
+            </div>
+
+            <div id="error-message" class="error-message hidden"></div>
+        </main>
+
+        <footer class="footer">
+            <p>মাহদি আবরার শার্জি</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
