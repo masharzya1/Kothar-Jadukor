@@ -54,6 +54,4 @@ Generate the most suitable message according to this situation and the specified
         res.status(500).json({ error: 'বার্তা তৈরি করতে সমস্যা হয়েছে। আবার চেষ্টা করুন।' });
     }
 });
-
-// Vercel Serverless Function-এর জন্য Express অ্যাপটিকে এক্সপোর্ট করা হলো
 export default app; 
