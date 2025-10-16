@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Bengali AI Copywriting Assistant using Gemini API and Express.",
   "main": "server.js",
+  "type": "commonjs",
+  < --এই লাইনটি মুছে ফেলুন(যদি থাকে)
+  
+  // এই নতুন লাইনটি যোগ করুন:
+  "type": "module",
+  
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
