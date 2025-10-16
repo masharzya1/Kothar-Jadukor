@@ -6,8 +6,13 @@ const PORT = process.env.PORT || 5000;
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
 
-app.use(express.json());
+// ...
+if (!process.env.GEMINI_API_KEY) {
+    return res.status(500).json({ error: 'API কী কনফিগার করা হয়নি' });
+}
 
+
+app.use(express.json());
 app.use(express.static('.')); 
 
 const systemInstruction = `You are an extremely skilled and empathetic Bengali communication specialist and creative copywriter. Your primary goal is to analyze the Situation (Context) and the desired Tone provided by the user and generate the single, most appropriate, effective, and engaging message in Bengali.
