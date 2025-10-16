@@ -63,6 +63,7 @@ Generate the most suitable message according to this situation and the specified
 });
 
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+
+app.listen(PORT, '0.0.0.0', () => { 
+    console.log(`Server successfully started and listening on port ${PORT}`);
 });
