@@ -41,7 +41,7 @@ My desired tone for this message is: ${tone}
 Generate the most suitable message according to this situation and the specified tone.`;
 
         const response = await ai.models.generateContent({
-            model: 'gemini-2.5-flash-lite',
+            model: 'gemini-2.5-flash',
             config: {
                 systemInstruction: systemInstruction,
             },
