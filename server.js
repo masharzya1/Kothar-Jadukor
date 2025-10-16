@@ -4,12 +4,8 @@ const { GoogleGenAI } = require('@google/genai');
 const app = express();
 const PORT = process.env.PORT || 5000; 
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+const ai = new GoogleGenAI({ apiKey: AIzaSyDGXLm0cn1Gpf-_kz8Rvut-Adnji0OaEhE || "" });
 
-// ...
-if (!process.env.GEMINI_API_KEY) {
-    return res.status(500).json({ error: 'API কী কনফিগার করা হয়নি' });
-}
 
 
 app.use(express.json());
