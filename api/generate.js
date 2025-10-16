@@ -5,7 +5,7 @@ export default async (req, res) => {
     const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
     
     if (!GEMINI_API_KEY) {
-        // API Key না পেলে 500 এরর দেওয়া হলো
+        
         return res.status(500).json({ error: 'API কী কনফিগার করা হয়নি' });
     }
 
